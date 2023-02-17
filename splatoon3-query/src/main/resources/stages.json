@@ -1,0 +1,117 @@
+[
+  {
+    "id": "0",
+    "name": "バッテラストリート",
+    "image": "/images/stage/98baf21c0366ce6e03299e2326fe6d27a7582dce.png"
+  },
+  {
+    "id": "1",
+    "name": "フジツボスポーツクラブ",
+    "image": "/images/stage/83acec875a5bb19418d7b87d5df4ba1e38ceac66.png"
+  },
+  {
+    "id": "2",
+    "name": "ガンガゼ野外音楽堂",
+    "image": "/images/stage/187987856bf575c4155d021cb511034931d06d24.png"
+  },
+  {
+    "id": "3",
+    "name": "チョウザメ造船",
+    "image": "/images/stage/bc794e337900afd763f8a88359f83df5679ddf12.png"
+  },
+  {
+    "id": "4",
+    "name": "海女美術大学",
+    "image": "/images/stage/5c030a505ee57c889d3e5268a4b10c1f1f37880a.png"
+  },
+  {
+    "id": "5",
+    "name": "コンブトラック",
+    "image": "/images/stage/fc23fedca2dfbbd8707a14606d719a4004403d13.png"
+  },
+  {
+    "id": "6",
+    "name": "マンタマリア号",
+    "image": "/images/stage/070d7ee287fdf3c5df02411950c2a1ce5b238746.png"
+  },
+  {
+    "id": "7",
+    "name": "ホッケふ頭",
+    "image": "/images/stage/0907fc7dc325836a94d385919fe01dc13848612a.png"
+  },
+  {
+    "id": "8",
+    "name": "タチウオパーキング",
+    "image": "/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png"
+  },
+  {
+    "id": "9",
+    "name": "エンガワ河川敷",
+    "image": "/images/stage/8c95053b3043e163cbfaaf1ec1e5f3eb770e5e07.png"
+  },
+  {
+    "id": "10",
+    "name": "モズク農園",
+    "image": "/images/stage/a12e4bf9f871677a5f3735d421317fbbf09e1a78.png"
+  },
+  {
+    "id": "11",
+    "name": "Ｂバスパーク",
+    "image": "/images/stage/758338859615898a59e93b84f7e1ca670f75e865.png"
+  },
+  {
+    "id": "12",
+    "name": "デボン海洋博物館",
+    "image": "/images/stage/23259c80272f45cea2d5c9e60bc0cedb6ce29e46.png"
+  },
+  {
+    "id": "13",
+    "name": "ザトウマーケット",
+    "image": "/images/stage/d9f0f6c330aaa3b975e572637b00c4c0b6b89f7d.png"
+  },
+  {
+    "id": "14",
+    "name": "ハコフグ倉庫",
+    "image": "/images/stage/65c99da154295109d6fe067005f194f681762f8c.png"
+  },
+  {
+    "id": "15",
+    "name": "アロワナモール",
+    "image": "/images/stage/dcf332bdcc80f566f3ae59c1c3a29bc6312d0ba8.png"
+  },
+  {
+    "id": "16",
+    "name": "モンガラキャンプ場",
+    "image": "/images/stage/e4c4800be9fff23112334b193abb0fdf36e05933.png"
+  },
+  {
+    "id": "17",
+    "name": "ショッツル鉱山",
+    "image": "/images/stage/828e49a8414a4bbc0a5da3e61454ab148a9f4063.png"
+  },
+  {
+    "id": "18",
+    "name": "アジフライスタジアム",
+    "image": "/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
+  },
+  {
+    "id": "19",
+    "name": "ホテルニューオートロ",
+    "image": "/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+  },
+  {
+    "id": "20",
+    "name": "スメーシーワールド",
+    "image": "/images/stage/555c356487ac3edb0088c416e8045576c6b37fcc.png"
+  },
+  {
+    "id": "21",
+    "name": "アンチョビットゲームズ",
+    "image": "/images/stage/1430e5ac7ae9396a126078eeab824a186b490b5a.png"
+  },
+  {
+    "id": "22",
+    "name": "ムツゴ楼",
+    "image": "/images/stage/132327c819abf2bd44d0adc0f4a21aad9cc84bb2.png"
+  }
+]
