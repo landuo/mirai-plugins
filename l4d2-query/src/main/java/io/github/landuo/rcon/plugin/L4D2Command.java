@@ -1,11 +1,7 @@
 package io.github.landuo.rcon.plugin;
 
-import io.github.landuo.l4d2.entity.A2sPlayers;
-import io.github.landuo.l4d2.entity.Player;
 import io.github.landuo.l4d2.entity.RconRequest;
-import io.github.landuo.l4d2.entity.SourceServerInfo;
 import io.github.landuo.l4d2.exception.ServiceException;
-import io.github.landuo.l4d2.utils.A2sUtil;
 import io.github.landuo.l4d2.utils.RconUtil;
 import net.mamoe.mirai.console.command.CommandContext;
 import net.mamoe.mirai.console.command.java.JCompositeCommand;
@@ -110,32 +106,7 @@ public class L4D2Command extends JCompositeCommand {
     @SubCommand
     @Description("查看服务器信息")
     public void server(CommandContext context, @Name("自定义的服务器名") String serverName) {
-        Server server = getServerWithServerName(context, serverName);
-        String ip = server.getIp();
-        Integer port = server.getPort();
-        SourceServerInfo serverInfo = A2sUtil.getA2sInfo(ip + ":" + port);
-        if (serverInfo == null || serverInfo.getName() == null) {
-            context.getSender().sendMessage("暂时查询不到服务器, 请稍后再试.");
-            return;
-        }
-        StringBuilder builder = new StringBuilder();
-        builder.append("服务器名: ").append(serverInfo.getName()).append("\n");
-        builder.append("游戏: ").append(serverInfo.getGame()).append("\n");
-        builder.append("地图: ").append(serverInfo.getMap()).append("\n");
-        builder.append("玩家: ").append(serverInfo.getPlayers()).append("/").append(serverInfo.getMaxPlayers()).append("\n");
-        builder.append("Value反作弊: ").append("secured".equals(serverInfo.getVac()) ? "安全" : "不安全").append("\n");
-        builder.append("延迟: ").append(serverInfo.getTimes()).append("\n");
-
-        A2sPlayers players = A2sUtil.getPlayers(ip + ":" + port);
-        if (players.getPlayers() == null || players.getPlayers().isEmpty()) {
-            context.getSender().sendMessage(builder.toString());
-            return;
-        }
-        builder.append("-------------------------").append("\n");
-        for (Player player : players.getPlayers()) {
-            builder.append(String.format("玩家: %s, 比分: %d, 时间: %s", player.getName(), player.getScore(), player.getDuration())).append("\n");
-        }
-        context.getSender().sendMessage(builder.toString());
+        ServerCommand.INSTANCE.server(context, serverName);
     }
 
     private Server getServerWithServerName(CommandContext context, String serverName) {

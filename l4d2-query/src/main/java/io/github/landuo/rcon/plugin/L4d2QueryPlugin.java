@@ -22,6 +22,8 @@ public final class L4d2QueryPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         CommandManager.INSTANCE.registerCommand(L4D2Command.INSTANCE, false);
+        CommandManager.INSTANCE.registerCommand(StatusCommand.INSTANCE, false);
+        CommandManager.INSTANCE.registerCommand(ServerCommand.INSTANCE, false);
         this.reloadPluginData(L4d2PluginData.INSTANCE);
         getLogger().info("Plugin loaded!");
     }

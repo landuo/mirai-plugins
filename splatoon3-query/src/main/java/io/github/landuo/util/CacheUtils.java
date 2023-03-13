@@ -20,6 +20,7 @@ import io.github.landuo.pojo.salmon.SalmonWeapon;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -66,7 +67,7 @@ public class CacheUtils extends SplatoonService {
             JsonObject regular = regularSchedules.get(i).getAsJsonObject();
             String startTime = regular.get("startTime").getAsString();
             // regularMatchSetting说明是祭典，暂不实现
-            if (regular.get("regularMatchSetting") instanceof JsonNull){
+            if (regular.get("regularMatchSetting") instanceof JsonNull) {
                 continue;
             }
             JsonObject bankara = null;
@@ -97,7 +98,13 @@ public class CacheUtils extends SplatoonService {
                                        int picPaddingLeft, JsonObject regular, JsonObject bankara, BufferedImage bufferedImage) {
         Graphics graphics = bufferedImage.getGraphics();
         // 设置文字字体和画笔颜色
-        Font font = new Font("Baoli SC", Font.BOLD, 150);
+        Font font = null;
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, SpQueryPlugin.INSTANCE.getResourceAsStream("Baoli.ttc"));
+            font = font.deriveFont(Font.BOLD, 150);
+        } catch (FontFormatException | IOException e) {
+            throw new RuntimeException(e);
+        }
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
         // 打印时间
@@ -105,7 +112,7 @@ public class CacheUtils extends SplatoonService {
                 DateUtils.formatLocalDateTime(regular.get("startTime").getAsString(), null) + " - "
                         + DateUtils.formatLocalDateTime(regular.get("endTime").getAsString(), null),
                 paddingLeft, paddingTop);
-        font = new Font("Baoli SC", Font.BOLD, 150);
+        font = font.deriveFont(Font.BOLD, 150);
         graphics.setFont(font);
         // 打印游戏模式
         String gameMode = GameModeEnum.getZhNameByKey(
@@ -205,7 +212,13 @@ public class CacheUtils extends SplatoonService {
                     JsonObject jsonObject = coopSchedules.get(i).getAsJsonObject();
                     BufferedImage mapImage = ResourceUtils.getMapPictureV3(jsonObject.getAsJsonObject("setting")
                             .getAsJsonObject("coopStage").getAsJsonObject("image").get("url").getAsString());
-                    Font f = new Font("Baoli SC", Font.PLAIN, fontSize);
+                    Font f = null;
+                    try {
+                        f = Font.createFont(Font.TRUETYPE_FONT, SpQueryPlugin.INSTANCE.getResourceAsStream("Baoli.ttc"));
+                        f = f.deriveFont(Font.BOLD, fontSize);
+                    } catch (FontFormatException | IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     Color mycolor = Color.WHITE;
                     graphics.setColor(mycolor);
                     graphics.setFont(f);
@@ -351,13 +364,24 @@ public class CacheUtils extends SplatoonService {
                                      int picPaddingLeft, Regular regular, Gachi gachi, League league, BufferedImage bufferedImage) {
         Graphics graphics = bufferedImage.getGraphics();
         // 设置文字字体和画笔颜色
-        Font font = new Font("Baoli SC", Font.BOLD, 150);
+        Font font = null;
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, SpQueryPlugin.INSTANCE.getResourceAsStream("Baoli.ttc"));
+            font = font.deriveFont(Font.BOLD, 150);
+        } catch (FontFormatException | IOException e) {
+            throw new RuntimeException(e);
+        }
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
         // 打印时间
         graphics.drawString(DateUtils.formatDate(regular.getStartTime(), "HH:mm") + " - "
                 + DateUtils.formatDate(regular.getEndTime(), "HH:mm"), paddingLeft, paddingTop);
-        font = new Font("Baoli SC", Font.BOLD, 150);
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, SpQueryPlugin.INSTANCE.getResourceAsStream("Baoli.ttc"));
+            font = font.deriveFont(Font.BOLD, 150);
+        } catch (FontFormatException | IOException e) {
+            throw new RuntimeException(e);
+        }
         graphics.setFont(font);
         // 打印游戏模式
         String gameMode = GameModeEnum.getZhNameByKey(regular.getRule().getKey());
@@ -431,7 +455,14 @@ public class CacheUtils extends SplatoonService {
             int beginHeight = i * 450;
             SalmonDetail salmonDetail = salmonDetailList.get(i);
             BufferedImage mapImage = ResourceUtils.getExternalPicture(salmonDetail.getStage().getImage());
-            Font f = new Font("Baoli SC", Font.PLAIN, fontSize);
+            Font f = null;
+            try {
+                f = Font.createFont(Font.TRUETYPE_FONT, SpQueryPlugin.INSTANCE.getResourceAsStream("Baoli.ttc"));
+                f = f.deriveFont(Font.BOLD, fontSize);
+            } catch (FontFormatException | IOException e) {
+                throw new RuntimeException(e);
+            }
+            f = f.deriveFont(Font.BOLD, fontSize);
             Color mycolor = Color.WHITE;
             Graphics graphics = SALMON_PIC_V2.getGraphics();
             graphics.setColor(mycolor);

@@ -1,5 +1,6 @@
 package io.github.landuo.rcon.plugin;
 
+import io.github.landuo.l4d2.utils.A2sUtil;
 import net.mamoe.mirai.console.data.Value;
 import net.mamoe.mirai.console.data.java.JavaAutoSavePluginData;
 import net.mamoe.mirai.contact.User;
@@ -15,6 +16,7 @@ public class L4d2PluginData extends JavaAutoSavePluginData {
 
     private L4d2PluginData() {
         super("l4d2-query");
+        A2sUtil.soTimeOut = 3000;
     }
 
     public final Value<List<Server>> servers = typedValue("servers",
